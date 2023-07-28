@@ -12,7 +12,7 @@ class secteurController extends Controller
     public function index()
     {
         $secteur = secteur::get();
-        return view('admin.secteur.secteur', compact('secteur'));
+        return view('admin.secteur.Secteur', compact('secteur'));
     }
 
     /**
