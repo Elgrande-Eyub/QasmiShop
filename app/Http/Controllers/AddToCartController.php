@@ -138,6 +138,18 @@ class AddToCartController extends Controller
         }
     }
 
+    public function countCart()
+    {
+
+        if (auth()->check()) {
+            $cartCount = addToCart::where('user_id', auth()->user()->id)->count();
+        } else {
+            $cart = session()->get('cart', []);
+            $cartCount = count($cart);
+        }
+
+        return $cartCount;
+    }
 
 
 }

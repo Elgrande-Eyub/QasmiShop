@@ -77,6 +77,7 @@ Route::prefix('admin')->group(function () {
         route::resource('categorie',categorieController::class);
         route::resource('size',SizesController::class);
         route::resource('commande',CommandeController::class);
+        // route::resource('commande',CommandeController::class);
     });
 
     require __DIR__.'/auth.php';
@@ -106,9 +107,7 @@ Route::prefix('admin')->group(function () {
 
 
     // Front End Side
-        Route::get('', function(){
-    return redirect()->route('index');
-        });
+    Route::redirect('', 'index');
     Route::controller(routeController::class)->group(function () {
     Route::get('index', 'index')->name('index');
     Route::get('about', 'about')->name('about');
@@ -135,10 +134,10 @@ Route::prefix('admin')->group(function () {
     Route::get('checkoutSession', [checkoutController::class,'getSessionProccedCheckout']);
 
 
-    route::resource('commande',CommandeController::class);
+
 
     Route::controller(AddToCartController::class)->group(function () {
         Route::post('addCart','addCart')->name('addCart');
         Route::post('deleteCart/{id}', 'deleteCart')->name('deleteCart');
         Route::post('updateQuantity', 'updateQuantity')->name('updateQuantity');
-        });
+    });

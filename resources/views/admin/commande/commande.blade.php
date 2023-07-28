@@ -5,19 +5,7 @@
 
 <head>
     @include('admin.layout.head')
-
-
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-    <meta name="description"
-        content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
-    <meta name="keywords"
-        content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
-    <meta name="author" content="PIXINVENT">
     <title>Commande Management</title>
-    <link rel="apple-touch-icon" href="../../../app-assets/images/ico/apple-icon-120.png">
-    <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/ico/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -96,7 +84,7 @@
                                             name="rowId">
 
                                         <td></td>
-                                        <th>{{ $loop->index + 1}}</th>
+                                        <th>#{{ $loop->index + 1}}</th>
                                         <td class="commandeID">#{{ $commande->orderNumber }}</td>
                                         <td class="commandeName">{{ $commande->name }}</td>
                                         <td class="commandeTelephone">{{ $commande->telephone }}</td>
@@ -157,9 +145,9 @@
                     <td class="commandetotal">{{ $commande->total }} Dhs</td>
 
                     <td class="product-action">
-                        <a class=" edit-button"><button type="button"
+                        <a href="{{ route('commande.show', ['commande' => $commande->id] )}}" class=" edit-button"><button type="button"
                                 class="btn btn-icon btn-primary mr-1 mb-1 waves-effect waves-light"><i
-                                    class="feather icon-edit"></i></button></a>
+                                    class="feather icon-corner-up-left"></i></button></a>
                         <a class=" delete-button"><button type="button"
                                 class="btn btn-icon btn-primary mr-1 mb-1 waves-effect waves-light "><i
                                     class="feather icon-trash-2"></i></button></a>
