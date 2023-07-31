@@ -46,7 +46,7 @@ $(document).ready(function() {
         var newTotal = currentQuantity;
         var totalSingle = comparedPrice * newTotal;
         var formattedTotalSingle = totalSingle.toFixed(2);
-        row.find('.totalSingle').text(formattedTotalSingle + ' DHs');
+        row.find('.totalSingle').text('€' + formattedTotalSingle);
     });
 
     function updateQuantity(cartId, productId, quantity) {

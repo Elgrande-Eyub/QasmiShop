@@ -250,12 +250,12 @@
                                                 <div class="product-card-bottom">
                                                     @if(auth()->check() && auth()->user()->role === "professional")
                                                     <div class="product-price">
-                                                        <span>{{ $product->variation['grossitePrice']}}Dhs</span>
+                                                        <span>€{{ $product->variation['grossitePrice']}}</span>
                                                     </div>
                                                     @else
                                                     <div class="product-price">
-                                                        <span>{{ $product->variation['comparedPrice'] }}Dhs</span>
-                                                        <span class="old-price">{{ $product->variation['price'] }}Dhs</span>
+                                                        <span>€{{ $product->variation['comparedPrice'] }}</span>
+                                                        <span class="old-price">€{{ $product->variation['price'] }}</span>
                                                     </div>
                                                     @endif
 
@@ -376,13 +376,13 @@
                         @if(auth()->check() && auth()->user()->role === "professional")
 
                                                     <div class="product-price">
-                                                        <span>{{ $product->variation['grossitePrice']}} Dhs</span>
+                                                        <span>€{{ $product->variation['grossitePrice']}} </span>
 
                                                     </div>
                                                     @else
                                                     <div class="product-price">
-                                                        <span>{{$product->variation['comparedPrice']}} Dhs</span>
-                                                        <span class="old-price">{{ $product->variation['price'] }} Dhs</span>
+                                                        <span>€{{$product->variation['comparedPrice']}} </span>
+                                                        <span class="old-price">€{{ $product->variation['price'] }} </span>
                                                     </div>
                                                     @endif
 
@@ -426,13 +426,13 @@
                         @if(auth()->check() && auth()->user()->role === "professional")
 
                                                     <div class="product-price">
-                                                        <span>{{ $product->variation['grossitePrice']}} Dhs</span>
+                                                        <span>€{{ $product->variation['grossitePrice']}} </span>
 
                                                     </div>
                                                     @else
                                                     <div class="product-price">
-                                                        <span>{{$product->variation['comparedPrice']}} Dhs</span>
-                                                        <span class="old-price">{{ $product->variation['price'] }} Dhs</span>
+                                                        <span>€{{$product->variation['comparedPrice']}} </span>
+                                                        <span class="old-price">€{{ $product->variation['price'] }} </span>
                                                     </div>
                                                     @endif
 
@@ -476,13 +476,13 @@
                         @if(auth()->check() && auth()->user()->role === "professional")
 
                                                     <div class="product-price">
-                                                        <span>{{ $product->variation['grossitePrice']}} Dhs</span>
+                                                        <span>€{{ $product->variation['grossitePrice']}} </span>
 
                                                     </div>
                                                     @else
                                                     <div class="product-price">
-                                                        <span>{{$product->variation['comparedPrice']}} Dhs</span>
-                                                        <span class="old-price">{{ $product->variation['price'] }} Dhs</span>
+                                                        <span>€{{$product->variation['comparedPrice']}} </span>
+                                                        <span class="old-price">€{{ $product->variation['price'] }} </span>
                                                     </div>
                                                     @endif
 
@@ -526,13 +526,13 @@
                         @if(auth()->check() && auth()->user()->role === "professional")
 
                                                     <div class="product-price">
-                                                        <span>{{ $product->variation['grossitePrice']}} Dhs</span>
+                                                        <span>€{{ $product->variation['grossitePrice']}} </span>
 
                                                     </div>
                                                     @else
                                                     <div class="product-price">
-                                                        <span>{{$product->variation['comparedPrice']}} Dhs</span>
-                                                        <span class="old-price">{{ $product->variation['price'] }} Dhs</span>
+                                                        <span>€{{$product->variation['comparedPrice']}} </span>
+                                                        <span class="old-price">€{{ $product->variation['price'] }} </span>
                                                     </div>
                                                     @endif
 

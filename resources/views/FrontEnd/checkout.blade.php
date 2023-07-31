@@ -91,7 +91,7 @@
                                     <p style="font-size: 1.3rem;" data-variation-id={{ $product['variation'] }} data-product-id={{ $product['productID'] }}>{{ $loop->iteration }}. <span class="text-brand">{{ $product['productName'] }} {{ $product['size'] }}</span>  x <span >{{ $product['quantity'] }}</span></p>
                                 </div>
                                 <div>
-                                    <p style="font-size: 1.3rem;font-weight:600"><span class="subTotal"> {{ number_format($product['quantity'] * $product['price'], 2, '.', '') }}</span> Dhs</p>
+                                    <p style="font-size: 1.3rem;font-weight:600"><span class="subTotal"> €{{ number_format($product['quantity'] * $product['price'], 2, '.', '') }}</span> </p>
                                 </div>
                             </div>
                             @php
@@ -107,7 +107,7 @@
                             <div style="display: flex;justify-content:end">
 
                                 <div>
-                                    Total Commande:<p style="font-size: 1.3rem;font-weight:700"><span class="Total">{{ number_format($totalPrice, 2, '.', '') }}</span> Dhs</p>
+                                    Total Commande:<p style="font-size: 1.3rem;font-weight:700"><span class="Total">€{{ number_format($totalPrice, 2, '.', '') }}</span> </p>
                                 </div>
                             </div>
                         </div>

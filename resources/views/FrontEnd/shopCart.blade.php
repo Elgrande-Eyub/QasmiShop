@@ -114,9 +114,9 @@
                                                 <h4 class="text-brand totalSingle">
                                                     @if ( session('role') === 'professional')
 
-                                                    {{ $product->grossitePrice * $product->quantity }} Dhs</h4>
+                                                    €{{  number_format(($product->grossitePrice * $product->quantity), 2, '.', '') }}</h4>
                                                     @else
-                                                    {{ $product->comparedPrice * $product->quantity }} Dhs</h4>
+                                                    €{{  number_format(($product->comparedPrice * $product->quantity), 2, '.', '') }}</h4>
                                                     @endif
 
                                             </td>

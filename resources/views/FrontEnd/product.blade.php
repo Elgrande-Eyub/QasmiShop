@@ -77,21 +77,21 @@
                                         <div class="product-price primary-color float-left">
                                             @if ( session('role') === 'professional')
 
-                                            <span class="current-price text-brand comparedPrice"  id="comparedPrice">{{ $product->variation['grossitePrice'] }}Dhs</span>
+                                            <span class="current-price text-brand comparedPrice"  id="comparedPrice">€{{ $product->variation['grossitePrice'] }}</span>
                                         @else
                                                 @if($product->variation['sold'] == 0)
 
-                                                <span class="current-price text-brand comparedPrice"  id="comparedPrice">{{ $product->variation['comparedPrice'] }}Dhs</span>
+                                                <span class="current-price text-brand comparedPrice"  id="comparedPrice">€{{ $product->variation['comparedPrice'] }}</span>
                                                 <span>
                                                     <span class="save-price font-md color3 ml-15 Solde"  id="Solde"></span>
                                                     <span class="old-price font-md ml-15 price"  id="price"></span>
                                                 </span>
                                                 @else
 
-                                                <span class="current-price text-brand comparedPrice"  id="comparedPrice">{{ $product->variation['comparedPrice'] }}Dhs</span>
+                                                <span class="current-price text-brand comparedPrice"  id="comparedPrice">€{{ $product->variation['comparedPrice'] }}</span>
                                                 <span>
                                                     <span class="save-price font-md color3 ml-15 Solde"  id="Solde">{{ $product->variation['sold'] }}% Solde</span>
-                                                    <span class="old-price font-md ml-15 price"  id="price">{{ $product->variation['price'] }}Dhs</span>
+                                                    <span class="old-price font-md ml-15 price"  id="price">€{{ $product->variation['price'] }}</span>
                                                 </span>
 
                                                 @endif

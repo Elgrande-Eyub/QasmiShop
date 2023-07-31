@@ -99,7 +99,7 @@
                               {{ $product['productName'] }}
                             </td>
                             <td style="color: #777777; font-family: Helvetica Neue,Helvetica,sans-serif,Open Sans; font-size: 15px; font-weight: 400; mso-line-height-rule:exactly; line-height: 22px; margin: 0;padding: 10px 0;  text-align:right;">{{ $product['quantity'] }}</td>
-                            <td style="color: #777777; font-family: Helvetica Neue,Helvetica,sans-serif,Open Sans; font-size: 15px; font-weight: 400; mso-line-height-rule:exactly; line-height: 22px; margin: 0;padding: 10px 0;  text-align:right; ">{{ number_format($product['quantity'] * $product['price'], 2, '.', '') }} Dhs</td>
+                            <td style="color: #777777; font-family: Helvetica Neue,Helvetica,sans-serif,Open Sans; font-size: 15px; font-weight: 400; mso-line-height-rule:exactly; line-height: 22px; margin: 0;padding: 10px 0;  text-align:right; ">€{{ number_format($product['quantity'] * $product['price'], 2, '.', '') }} </td>
                           </tr>
 
                           @php
@@ -110,7 +110,7 @@
 
                   <tr>
                     <td style="color: #2b2b2b; font-family: Helvetica Neue,Helvetica,sans-serif,Open Sans; font-size: 20px; font-weight: 400; mso-line-height-rule:exactly; line-height: 30px; margin: 0; border-top:1px solid #dfe5e9; padding: 10px 0px 0px 0px; text-align:left;" colspan="2">Total</td>
-                    <td style="color: #2b2b2b; font-family: Helvetica Neue,Helvetica,sans-serif,Open Sans; font-size: 20px; font-weight: 400; mso-line-height-rule:exactly; line-height: 30px; margin: 0; border-top:1px solid #dfe5e9; text-align:right; padding: 10px 0px 0px 0px;">{{ number_format($totalPrice, 2, '.', '') }} Dhs</td>
+                    <td style="color: #2b2b2b; font-family: Helvetica Neue,Helvetica,sans-serif,Open Sans; font-size: 20px; font-weight: 400; mso-line-height-rule:exactly; line-height: 30px; margin: 0; border-top:1px solid #dfe5e9; text-align:right; padding: 10px 0px 0px 0px;">€{{ number_format($totalPrice, 2, '.', '') }} </td>
                   </tr>
                 </table>
               </td>

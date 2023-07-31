@@ -15,7 +15,7 @@ $(document).ready(function() {
                 var role = $('#userRole').data('role');
 
                 if (role === 'professional') {
-                    $('.comparedPrice').text(response.grossitePrice + 'Dhs');
+                    $('.comparedPrice').text('€' + response.grossitePrice);
                     $('.price').text("");
                     $('.Solde').text("");
 
@@ -23,18 +23,18 @@ $(document).ready(function() {
 
                     if (response.sold == 0) {
 
-                        $('.comparedPrice').text(response.comparedPrice + 'Dhs');
+                        $('.comparedPrice').text('€' + response.comparedPrice);
                         $('.price').text("");
                         $('.Solde').text("");
 
                     } else {
-                        $('.price').text(response.price + 'Dhs');
+                        $('.price').text('€' + response.price);
                         $('.Solde').text(response.sold + '% Solde');
-                        $('.comparedPrice').text(response.comparedPrice + 'Dhs');
+                        $('.comparedPrice').text('€' + response.comparedPrice);
 
                     }
 
-                    $('.comparedPrice').text(response.comparedPrice + 'Dhs');
+                    $('.comparedPrice').text('€' + response.comparedPrice);
                 }
 
             }
