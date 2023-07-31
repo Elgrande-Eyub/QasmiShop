@@ -100,8 +100,10 @@ class CommandeController extends Controller
     {
         $commande = Commande::find($id);
         $commande->articles = commandeArticles::join('produits','commande_articles.produit_id','=','produits.id')
+        ->join('produit_variations','produit_variations.id','=','commande_articles.variation_id')
+        ->join('sizes','produit_variations.size_id','=','sizes.id')
         ->where('commande_id',$commande->id)
-        ->select('produits.name','commande_articles.*')
+        ->select('produits.name','commande_articles.*','sizes.name as size_name')
         ->get();
 
       return view('admin.commande.commandeDetail',compact('commande'));

@@ -337,8 +337,8 @@
                       <table class="table m-0">
                         <thead>
                           <tr>
-                            <th colspan="2">Item</th>
-                            {{-- <th></th> --}}
+                            <th>Item</th>
+                            <th>Size</th>
                             <th>Prix Unitaire</th>
                             <th>Qty</th>
                             <th>Total</th>
@@ -349,9 +349,9 @@
 
 
                             <tr>
-                                <td colspan="2" class="text-nowrap"><a style="color: #FF9F43" target="blank"
+                                <td class="text-nowrap"><a style="color: #FF9F43" target="blank"
                                     href="{{ route('product', ['id' => $produit->produit_id]) }}">{{ $produit->name }}</a></td>
-                                {{-- <td class="text-nowrap"></td> --}}
+                                 <td class="text-nowrap">{{ $produit->size_name }}</td>
                                 <td>€{{ number_format(($produit->subTotal/$produit->quantity), 2, '.', '') }}</td>
                                 <td>{{ $produit->quantity }}</td>
                                 <td>€{{ number_format($produit->subTotal, 2, '.', '') }}</td>

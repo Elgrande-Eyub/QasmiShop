@@ -127,14 +127,14 @@
                                             <div class="mr-2">
                                                 <p class="mb-50 text-bold-600">This Month</p>
                                                 <h2 class="text-bold-400">
-                                                    <sup class="font-medium-1">$</sup>
+                                                    <sup class="font-medium-1">€</sup>
                                                     <span class="text-success">86,589</span>
                                                 </h2>
                                             </div>
                                             <div>
                                                 <p class="mb-50 text-bold-600">Last Month</p>
                                                 <h2 class="text-bold-400">
-                                                    <sup class="font-medium-1">$</sup>
+                                                    <sup class="font-medium-1">€</sup>
                                                     <span>73,683</span>
                                                 </h2>
                                             </div>

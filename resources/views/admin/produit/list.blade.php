@@ -107,7 +107,7 @@
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="product-price">{{ $produit->price }} DHs</td>
+                                        <td class="product-price">{{ $produit->price }}</td>
                                         <td class="product-price">{{ $produit->stock }}</td>
 
                                         <td class="product-action">

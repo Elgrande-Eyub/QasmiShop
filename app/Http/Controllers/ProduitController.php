@@ -25,6 +25,18 @@ class ProduitController extends Controller
         $produits = produit::leftjoin('produit_categories', 'produit_categories.id', '=', 'produits.category_id')
         ->select('produits.*', 'produit_categories.categorie')
         ->get();
+
+        foreach($produits as $produit){
+            $variation = produitVariation::where('produit_id',$produit->id);
+
+            $expensivePrice = $variation->max('price');
+            $lowestPrice = $variation->min('price');
+            $price = '€'.$lowestPrice.' - '.'€'.$expensivePrice;
+            $produit->price =$price;
+
+        }
+
+
         return view('admin.produit.list', compact('produits'));
 
     }
