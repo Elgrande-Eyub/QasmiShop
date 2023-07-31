@@ -43,7 +43,7 @@ class AppServiceProvider extends ServiceProvider
             });
 
         View::composer('admin.layout.sidebar', function ($view) {
-            $numberOfCommands = Commande::count();
+            $numberOfCommands = Commande::where('status','En attente')->count();
             $view->with('numberOfCommands', $numberOfCommands);
         });
     }

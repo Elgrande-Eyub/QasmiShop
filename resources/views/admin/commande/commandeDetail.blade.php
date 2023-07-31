@@ -36,7 +36,7 @@
     <div class="app-content content">
         <div class="content-overlay"></div>
         <div class="header-navbar-shadow"></div>
-        <div class="content-wrapper">
+       {{--  <div class="content-wrapper">
             <div class="content-header row">
                 <div class="content-header-left col-md-9 col-12 mb-2">
                     <div class="row breadcrumbs-top">
@@ -216,7 +216,182 @@
 
 
 
-        </div>
+        </div> --}}
+
+        <div class="content-wrapper">
+            <!-- Content -->
+
+            <div class="container-xxl flex-grow-1 container-p-y">
+              <div class="row invoice-preview">
+                <!-- Invoice -->
+                <div class="col-12 mb-md-0 mb-4">
+                  <div class="card invoice-preview-card">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between flex-xl-row flex-md-column flex-sm-row flex-column m-sm-3 m-0">
+                        <div class="mb-xl-0 ">
+                          <div class="d-flex svg-illustration  gap-2 align-items-center">
+                            <img width="35%"
+                            src="{{ asset('assets/imgs/theme/Kasmifood-Distribution-logo-v2.png') }}"
+                            alt="company logo">
+
+
+                          </div>
+
+                        </div>
+                        <div>
+                          <h4 class="fw-semibold mb-1">Commande #{{ $commande->orderNumber }}</h4>
+                          <div class=" ">
+                            <span>Date:</span>
+                            <span class="fw-semibold">{{ $commande->created_at->format('d M Y') }}</span>
+                          </div>
+                          <div class=" pt-1">
+                            <span>Status:</span>
+                            <span class="fw-semibold">
+                                @if ($commande->status === 'En attente')
+                                <div class="chip chip-warning">
+                                @elseif($commande->status === 'En cours de livraison')
+                                    <div class="chip chip-info">
+                                    @elseif($commande->status === 'Livré')
+                                        <div class="chip chip-success">
+                                        @elseif($commande->status === 'Annulé')
+                                            <div class="chip chip-danger">
+                                            @elseif($commande->status === 'Retourné')
+                                                <div class="chip chip-secondary">
+                            @endif
+                            <div class="chip-body">
+                                @if ($commande->status === 'Retourné')
+                                    <div class="chip-text" style="  text-decoration: line-through;">
+                                        {{ $commande->status }}</div>
+                                @else
+                                    <div class="chip-text">{{ $commande->status }}</div>
+                                @endif
+                            </div>
+                        </span>
+                          </div>
+                          <div class="mb-2 pt-1">
+                            <span>Paiement:</span>
+                            <span class="fw-semibold">
+                                  @if ($commande->payment_status === 'Non payé')
+                                <div class="chip chip-warning">
+                                @elseif ($commande->payment_status === 'Payé')
+                                    <div class="chip chip-success">
+                                    @elseif ($commande->payment_status === 'Remboursé')
+                                        <div class="chip chip-secondary">
+                                        @elseif ($commande->payment_status === 'Annulé')
+                                            <div class="chip chip-danger">
+                            @endif
+                            <div class="chip-body">
+                                @if ($commande->payment_status === 'Remboursé')
+                                    <div class="chip-text" style="  text-decoration: line-through;">
+                                        {{ $commande->payment_status }}</div>
+                                @else
+                                    <div class="chip-text">{{ $commande->payment_status }}</div>
+                                @endif
+
+                            </div>
+                        </div></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <hr class="my-0">
+                    <div class="card-body">
+                      <div class="row p-sm-3 p-0">
+                        <div class="col-xl-6 col-md-12 col-sm-5 col-12 mb-xl-0 mb-md-2 mb-sm-0 mb-2">
+                          <h6 class="mb-3">Commande de :</h6>
+                          <p class="mb-1">{{ $commande->name }}</p>
+                          <p class="mb-1">{{ $commande->shipping_address }}</p>
+                          <p class="mb-1">{{ $commande->telephone }}</p>
+                          <p class="mb-0">{{ $commande->email }}</p>
+                        </div>
+                    {{--     <div class="col-xl-6 col-md-12 col-sm-7 col-12">
+                          <h6 class="mb-4">Bill To:</h6>
+                          <table>
+                            <tbody>
+                              <tr>
+                                <td class="pe-4">Total Due:</td>
+                                <td><strong>$12,110.55</strong></td>
+                              </tr>
+                              <tr>
+                                <td class="pe-4">Bank name:</td>
+                                <td>American Bank</td>
+                              </tr>
+                              <tr>
+                                <td class="pe-4">Country:</td>
+                                <td>United States</td>
+                              </tr>
+                              <tr>
+                                <td class="pe-4">IBAN:</td>
+                                <td>ETD95476213874685</td>
+                              </tr>
+                              <tr>
+                                <td class="pe-4">SWIFT code:</td>
+                                <td>BR91905</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div> --}}
+                      </div>
+                    </div>
+                    <div class="table-responsive border-top">
+                      <table class="table m-0">
+                        <thead>
+                          <tr>
+                            <th colspan="2">Item</th>
+                            {{-- <th></th> --}}
+                            <th>Prix Unitaire</th>
+                            <th>Qty</th>
+                            <th>Total</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($commande->articles as $produit)
+
+
+                            <tr>
+                                <td colspan="2" class="text-nowrap"><a style="color: #FF9F43" target="blank"
+                                    href="{{ route('product', ['id' => $produit->produit_id]) }}">{{ $produit->name }}</a></td>
+                                {{-- <td class="text-nowrap"></td> --}}
+                                <td>€{{ number_format(($produit->subTotal/$produit->quantity), 2, '.', '') }}</td>
+                                <td>{{ $produit->quantity }}</td>
+                                <td>€{{ number_format($produit->subTotal, 2, '.', '') }}</td>
+                              </tr>
+                        @endforeach
+
+                          <tr>
+                            <td colspan="3" class="align-top px-4 py-4">
+                              <p class="mb-2 mt-3">
+                                <span class="ms-3">Merci pour votre Commande</span>
+                              </p>
+
+                            </td>
+                            <td class="text-end pe-3 py-4">
+
+                              <p class="mb-0 pb-3">Total:</p>
+                            </td>
+                            <td class="ps-2 py-4">
+
+                              <p class="fw-semibold mb-0 pb-3">€{{ number_format($commande->total, 2, '.', '') }}</p>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+
+                  </div>
+                </div>
+                <!-- /Invoice -->
+
+
+              </div>
+
+
+
+            </div>
+            <!-- / Content -->
+
+
         </section>
         <!-- invoice page end -->
 

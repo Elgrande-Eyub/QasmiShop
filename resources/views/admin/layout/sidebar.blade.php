@@ -33,7 +33,11 @@
                 </ul>
             </li>
 
-            <li><a href="{{ route('commande.index') }}"><i class="feather icon-home"></i>Commandes<span class="badge badge badge-warning badge-pill float-right ">{{ $numberOfCommands }}</span></a>
+            <li><a href="{{ route('commande.index') }}"><i class="feather icon-home"></i>Commandes
+                @if($numberOfCommands != 0 )
+                <span class="badge badge badge-warning badge-pill float-right ">{{ $numberOfCommands }}</span>
+                @endif
+            </a>
 
             <li class=" nav-item {{ request()->is('admin/accounts') ? 'active' : '' }}"><a href="#"><i class="feather icon-users"></i><span class="menu-title" data-i18n="Accounts">Clients</span></a>
                 <ul class="menu-content">
