@@ -111,6 +111,7 @@ Route::prefix('admin')->group(function () {
     Route::controller(routeController::class)->group(function () {
     Route::get('index', 'index')->name('index');
     Route::get('about', 'about')->name('about');
+    Route::get('contact', 'contact')->name('contact');
     Route::get('product/{id}', 'product')->name('product');
     Route::get('login', 'login')->name('frontlogin');
     Route::get('shopcart', 'cartPage')->name('shopCart');

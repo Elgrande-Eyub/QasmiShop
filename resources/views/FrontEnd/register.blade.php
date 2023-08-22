@@ -5,7 +5,7 @@
 <!-- Mirrored from demosc.chinaz.net/Files/DownLoad/moban/202110/moban5797/page-register.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 23 Jun 2023 10:21:27 GMT -->
 <head>
     <meta charset="utf-8">
-    <title>Nest - Multipurpose eCommerce HTML Template</title>
+    <title>Kasmi Distribution - Registre</title>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">

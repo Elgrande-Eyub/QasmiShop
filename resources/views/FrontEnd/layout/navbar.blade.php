@@ -169,7 +169,7 @@
                                         href="{{ route('about') }}">KASMI Distribution</a>
                                 </li>
                                 <li>
-                                    <a href="#">Contact</a>
+                                    <a href="{{ route('contact') }}">Contact</a>
                                 </li>
                             </ul>
                         </nav>

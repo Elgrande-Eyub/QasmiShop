@@ -35,6 +35,11 @@ class routeController extends Controller
         return view('FrontEnd.about');
     }
 
+    public function contact()
+    {
+        return view('FrontEnd.contact');
+    }
+
     public function product($id)
     {
         $product = produit::leftjoin('produit_categories', 'produit_categories.id', '=', 'produits.category_id')
